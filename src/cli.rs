@@ -19,4 +19,5 @@ pub enum Commands {
     },
     Delete,
     Copy,
+    Rename,
 }
