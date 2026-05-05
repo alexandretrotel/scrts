@@ -7,6 +7,7 @@
 - Password prompts now show masked characters (dots) while typing instead of nothing
 - Rename prompt no longer pre-fills the old name — start typing the new name directly
 - Added a blank line before all confirmation messages for easier reading
+- Updated `dirs` from v5 to v6
 
 ## [0.2.0] - 2026-05-05
 
