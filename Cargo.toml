@@ -2,7 +2,13 @@
 name = "scrts"
 version = "0.1.0"
 edition = "2024"
+description = "A minimal CLI to store secrets using your OS native secret storage."
 license = "GPL-3.0-only"
+repository = "https://github.com/atrtde/scrts"
+homepage = "https://github.com/atrtde/scrts"
+readme = "README.md"
+keywords = ["secrets", "keyring", "password", "cli", "clipboard"]
+categories = ["command-line-utilities", "authentication"]
 
 [lib]
 name = "scrts"
