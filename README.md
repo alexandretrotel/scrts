@@ -15,6 +15,7 @@ scrts add              # prompt for name and secret
 scrts add --name foo   # skip the name prompt
 scrts list             # print stored names
 scrts delete           # interactively select and delete
+scrts copy             # select a secret and copy it to clipboard
 ```
 
 Secrets are stored under the `scrts` service in your OS keyring. A registry of entry names is kept at `~/.scrts.json`.
