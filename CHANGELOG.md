@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.0] - 2026-05-05
+
+### Added
+
+- `rename` command — interactively select a secret and give it a new name
+- `set` command — interactively select a secret and overwrite its value
+
 ## [0.1.0] - 2026-05-05
 
 ### Added
