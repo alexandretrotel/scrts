@@ -19,3 +19,7 @@ scrts copy             # select a secret and copy it to clipboard
 ```
 
 Secrets are stored under the `scrts` service in your OS keyring. A registry of entry names is kept at `~/.scrts.json`.
+
+## License
+
+GPL-3.0. See [LICENSE](LICENSE).
