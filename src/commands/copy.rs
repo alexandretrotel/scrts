@@ -21,6 +21,6 @@ pub fn run() -> Result<()> {
     let secret = store::get(&name)?;
     Clipboard::new()?.set_text(secret)?;
 
-    println!("Copied \"{name}\" to clipboard.");
+    println!("\nCopied \"{name}\" to clipboard.");
     Ok(())
 }

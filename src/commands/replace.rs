@@ -1,6 +1,6 @@
 use crate::{registry::Registry, store};
 use anyhow::Result;
-use inquire::{InquireError, Password, Select};
+use inquire::{InquireError, Password, PasswordDisplayMode, Select};
 
 pub fn run() -> Result<()> {
     let registry = Registry::load()?;
@@ -17,7 +17,11 @@ pub fn run() -> Result<()> {
         Err(e) => return Err(e.into()),
     };
 
-    let secret = match Password::new("New secret:").without_confirmation().prompt() {
+    let secret = match Password::new("New secret:")
+        .without_confirmation()
+        .with_display_mode(PasswordDisplayMode::Masked)
+        .prompt()
+    {
         Ok(s) => s,
         Err(InquireError::OperationCanceled | InquireError::OperationInterrupted) => return Ok(()),
         Err(e) => return Err(e.into()),
@@ -25,6 +29,6 @@ pub fn run() -> Result<()> {
 
     store::set(&name, &secret)?;
 
-    println!("Updated \"{name}\".");
+    println!("\nUpdated \"{name}\".");
     Ok(())
 }

@@ -27,6 +27,6 @@ pub fn run() -> Result<()> {
     }
     registry.save()?;
 
-    println!("Deleted {} secret(s).", selected.len());
+    println!("\nDeleted {} secret(s).", selected.len());
     Ok(())
 }

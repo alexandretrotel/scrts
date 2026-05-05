@@ -17,10 +17,7 @@ pub fn run() -> Result<()> {
         Err(e) => return Err(e.into()),
     };
 
-    let new_name = match Text::new("New name:")
-        .with_initial_value(&old_name)
-        .prompt()
-    {
+    let new_name = match Text::new("New name:").prompt() {
         Ok(n) => n,
         Err(InquireError::OperationCanceled | InquireError::OperationInterrupted) => return Ok(()),
         Err(e) => return Err(e.into()),
@@ -38,6 +35,6 @@ pub fn run() -> Result<()> {
     registry.add(new_name.clone());
     registry.save()?;
 
-    println!("Renamed \"{old_name}\" to \"{new_name}\".");
+    println!("\nRenamed \"{old_name}\" to \"{new_name}\".");
     Ok(())
 }

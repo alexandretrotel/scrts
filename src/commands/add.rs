@@ -1,6 +1,6 @@
 use crate::{registry::Registry, store};
 use anyhow::Result;
-use inquire::{InquireError, Password, Text};
+use inquire::{InquireError, Password, PasswordDisplayMode, Text};
 
 pub fn run(name_arg: Option<String>) -> Result<()> {
     let name = match name_arg {
@@ -14,7 +14,11 @@ pub fn run(name_arg: Option<String>) -> Result<()> {
         },
     };
 
-    let secret = match Password::new("Secret:").without_confirmation().prompt() {
+    let secret = match Password::new("Secret:")
+        .without_confirmation()
+        .with_display_mode(PasswordDisplayMode::Masked)
+        .prompt()
+    {
         Ok(s) => s,
         Err(InquireError::OperationCanceled | InquireError::OperationInterrupted) => return Ok(()),
         Err(e) => return Err(e.into()),
@@ -26,6 +30,6 @@ pub fn run(name_arg: Option<String>) -> Result<()> {
     registry.add(name.clone());
     registry.save()?;
 
-    println!("Saved \"{name}\".");
+    println!("\nSaved \"{name}\".");
     Ok(())
 }
