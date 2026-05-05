@@ -1,7 +1,7 @@
 pub mod cli;
 pub mod commands;
-pub mod index;
 pub mod platform;
+pub mod registry;
 pub mod store;
 
 use anyhow::Result;
