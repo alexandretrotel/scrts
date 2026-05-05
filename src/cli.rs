@@ -18,4 +18,5 @@ pub enum Commands {
         name: Option<String>,
     },
     Delete,
+    Copy,
 }

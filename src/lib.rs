@@ -12,5 +12,6 @@ pub fn run(cli: Cli) -> Result<()> {
         Commands::List => commands::list::run(),
         Commands::Add { name } => commands::add::run(name),
         Commands::Delete => commands::delete::run(),
+        Commands::Copy => commands::copy::run(),
     }
 }
