@@ -14,5 +14,6 @@ pub fn run(cli: Cli) -> Result<()> {
         Commands::Delete => commands::delete::run(),
         Commands::Copy => commands::copy::run(),
         Commands::Rename => commands::rename::run(),
+        Commands::Replace => commands::replace::run(),
     }
 }
